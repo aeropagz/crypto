@@ -25,12 +25,12 @@ def find_e(n: int):
 def encrypt_string(msg: str, e: int, N: int) -> List[int]:
     cipher: List[int] = []
     for char in msg:
-        cipher.append((ord(char) ** e % N))
+        cipher.append(pow(ord(char), e, N))
     return cipher
 
 
 def encrypt_number(i: int, e: int, N: int):
-    return i ** e % N
+    return pow(i, e, N)
 
 
 def decrypt_string(cipher: List[int], d: int, N: int) -> str:
@@ -41,4 +41,4 @@ def decrypt_string(cipher: List[int], d: int, N: int) -> str:
 
 
 def decrypt_number(i: int, d: int, N: int):
-    return i ** d % N
+    return pow(i ,d, N)
